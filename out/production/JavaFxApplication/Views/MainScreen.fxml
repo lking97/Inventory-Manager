@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="MainScreen" maxHeight="550.0" maxWidth="1004.0" minHeight="480.0" minWidth="949.0" prefHeight="550.0" prefWidth="1000.0" style="-fx-background-color: fff;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <MenuBar fx:id="mainMenuBar" layoutY="2.0" prefHeight="23.0" prefWidth="1000.0" AnchorPane.bottomAnchor="523.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem fx:id="menuExitItem" mnemonicParsing="false" onAction="#exitProgram" text="Close" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <Label fx:id="mainTitleLabel" layoutX="323.0" layoutY="42.0" text="Inventory Management System" textFill="#433f3f">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+        <TabPane fx:id="mainTabPane" layoutX="41.0" layoutY="92.0" prefHeight="400.0" prefWidth="925.0" style="-fx-background-color: fff;" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Parts">
+                    <AnchorPane id="outterPartsBoxMain" layoutX="14.0" layoutY="126.0" prefHeight="300.0" prefWidth="455.0" style="-fx-border-radius: 0; -fx-border-color: gray;">
+                        <children>
+                            <TextField fx:id="partSearchBox" layoutX="702.0" layoutY="14.0" prefHeight="22.0" prefWidth="182.0" promptText="Search Part" style="-fx-background-color: fff; -fx-border-style: solid; -fx-border-width: 0 0 2 0; -fx-border-color: a7e4bb;" />
+                            <Button fx:id="addPartButton" layoutX="743.0" layoutY="107.0" mnemonicParsing="false" onMouseClicked="#addPart" prefHeight="35.0" prefWidth="100.0" style="-fx-padding: 10; -fx-background-color: a7e4bb;" text="Add Part" />
+                            <Button layoutX="743.0" layoutY="167.0" minHeight="-Infinity" mnemonicParsing="false" onMouseClicked="#modifyPart" prefHeight="35.0" prefWidth="100.0" style="-fx-padding: 10; -fx-background-color: a7e4bb;" text=" Modify Part" />
+                            <Button layoutX="743.0" layoutY="227.0" minHeight="-Infinity" mnemonicParsing="false" onMouseClicked="#deletePart" prefHeight="35.0" prefWidth="100.0" style="-fx-padding: 10; -fx-background-color: a7e4bb;" text="Delete Part" />
+                            <TableView fx:id="partsTable" layoutX="10.0" layoutY="12.0" prefHeight="345.0" prefWidth="650.0">
+
+                                <columns>
+                                    <TableColumn fx:id="partIDColumn" prefWidth="67.0" text="Part ID">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="Id" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="partNameColumn" prefWidth="272.0" text="Part Name">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="Name" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="partCountColumn" prefWidth="120.0" text="Inventory Count">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="Stock" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                </columns>
+
+                            </TableView>
+                        </children>
+                    </AnchorPane>
+                </Tab>
+                <Tab text="Products">
+                    <AnchorPane id="outterPRoductsBoxMain" layoutX="481.0" layoutY="125.0" prefHeight="300.0" prefWidth="455.0" style="-fx-border-radius: 0; -fx-border-color: gray;">
+                        <children>
+                            <TextField fx:id="productSearchBox" layoutX="702.0" layoutY="14.0" prefHeight="22.0" prefWidth="182.0" promptText="Search Product" style="-fx-background-color: fff; -fx-border-style: solid; -fx-border-width: 0 0 2 0; -fx-border-color: a7e4bb;" />
+                            <Button layoutX="741.0" layoutY="227.0" minHeight="-Infinity" mnemonicParsing="false" onMouseClicked="#deleteProduct" prefHeight="35.0" prefWidth="105.0" style="-fx-padding: 10; -fx-background-color: a7e4bb;" text="Delete Product" />
+                            <Button layoutX="741.0" layoutY="167.0" minHeight="-Infinity" mnemonicParsing="false" onMouseClicked="#modifyProduct" prefHeight="35.0" prefWidth="105.0" style="-fx-padding: 10; -fx-background-color: a7e4bb;" text="Modify Product" />
+                            <Button fx:id="addProductButton" layoutX="741.0" layoutY="107.0" mnemonicParsing="false" onMouseClicked="#addProduct" prefHeight="35.0" prefWidth="105.0" style="-fx-padding: 10; -fx-background-color: a7e4bb;" text="Add Product" />
+                            <TableView fx:id="productsTable" layoutX="10.0" layoutY="12.0" prefHeight="345.0" prefWidth="650.0">
+                                <columns>
+                                    <TableColumn fx:id="productIDColumn" prefWidth="98.0" text="Product ID">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="ProductID" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="productNameColumn" prefWidth="271.0" text="Product Name">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="Name" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="productCountColumn" prefWidth="208.0" style="text-align: justify;" text="Inventory Count">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="InStock" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                </columns>
+                            </TableView>
+                        </children>
+                    </AnchorPane>
+                </Tab>
+                <Tab text="Reports">
+                    <AnchorPane id="outterReportBoxMain" layoutX="14.0" layoutY="126.0" prefHeight="300.0" prefWidth="455.0" style="-fx-border-radius: 0; -fx-border-color: gray;">
+                        <children>
+                            <Button layoutX="56.0" layoutY="50.0" onAction="#calculateTotalPartsPrice" style="-fx-background-color: a7e4bb;" text="Total Value of Parts Stock" />
+                            <Button layoutX="251.0" layoutY="50.0" onAction="#calculateTotalProductsPrice" style="-fx-background-color: a7e4bb;" text="Total Value of Products Stock" />
+                            <Button layoutX="491.0" layoutY="51.0" onAction="#showOutsourcedParts" style="-fx-background-color: a7e4bb;" text="Outsourced Parts Count and Vendors" />
+                            <Button layoutX="759.0" layoutY="51.0" onAction="#showTotalStockCount" style="-fx-background-color: a7e4bb;" text="Total Stock Count" />
+                            <TextArea fx:id="reportsTextArea" layoutX="288.0" layoutY="120.0" prefHeight="200" prefWidth="350.0" />
+                            <Button fx:id="exportButton" layoutX="688.0" layoutY="195.0" onAction="#exportToCSV" style="-fx-background-color: a7e4bb;" text="Export Inventory Report to CSV" />
+                     <Button layoutX="53.0" layoutY="195.0" mnemonicParsing="false" onAction="#generateReport" style="-fx-background-color: a7e4bb;" text="Generate Inventory Report" />
+                        </children>
+                    </AnchorPane>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <Button layoutX="839.0" layoutY="502.0" mnemonicParsing="false" onMouseClicked="#exitProgramButton" prefHeight="35.0" prefWidth="127.0" style="-fx-background-color: a7e4bb;" text="Exit" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="506.0" prefWidth="433.0" style="-fx-background-color: fff;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Label layoutX="16.0" layoutY="14.0" style="-fx-label-padding: 0;" text="Add Part">
+            <font>
+                <Font name="System Bold" size="28.0" />
+            </font>
+        </Label>
+        <RadioButton fx:id="inHouseRadio" layoutX="168.0" layoutY="73.0" mnemonicParsing="false" onMouseClicked="#selectInHouse" text="In House">
+            <font>
+                <Font size="14.0" />
+            </font>
+            <toggleGroup>
+                <ToggleGroup fx:id="addPartToggleGroup" />
+            </toggleGroup>
+        </RadioButton>
+        <RadioButton fx:id="outSourcedRadio" layoutX="255.0" layoutY="73.0" mnemonicParsing="false" onMouseClicked="#selectOutSourced" text="Outsourced" toggleGroup="$addPartToggleGroup">
+            <padding>
+                <Insets left="20.0" />
+            </padding>
+            <font>
+                <Font size="14.0" />
+            </font>
+        </RadioButton>
+        <TextField fx:id="id" editable="false" layoutX="168.0" layoutY="129.0" onMouseEntered="#idDisabled" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: fff; -fx-border-style: solid; -fx-border-width: 0 0 2 0; -fx-border-color: a7e4bb;" />
+        <TextField fx:id="name" layoutX="168.0" layoutY="179.0" prefHeight="21.0" prefWidth="150.0" promptText="Part Name" style="-fx-background-color: fff; -fx-border-style: solid; -fx-border-width: 0 0 2 0; -fx-border-color: a7e4bb;" />
+        <TextField fx:id="count" layoutX="168.0" layoutY="229.0" prefHeight="25.0" prefWidth="150.0" promptText="Inventory Count" style="-fx-background-color: fff; -fx-border-style: solid; -fx-border-width: 0 0 2 0; -fx-border-color: a7e4bb;" />
+        <TextField fx:id="price" layoutX="168.0" layoutY="279.0" prefHeight="25.0" prefWidth="150.0" promptText="Part Price" style="-fx-background-color: fff; -fx-border-style: solid; -fx-border-width: 0 0 2 0; -fx-border-color: a7e4bb;" />
+        <TextField fx:id="max" layoutX="168.0" layoutY="331.0" prefHeight="25.0" prefWidth="75.0" promptText="Max Inv" style="-fx-background-color: fff; -fx-border-style: solid; -fx-border-width: 0 0 2 0; -fx-border-color: a7e4bb;" />
+        <TextField fx:id="min" layoutX="316.0" layoutY="331.0" prefHeight="25.0" prefWidth="75.0" promptText="Min Inv" style="-fx-background-color: fff; -fx-border-style: solid; -fx-border-width: 0 0 2 0; -fx-border-color: a7e4bb;" />
+        <TextField fx:id="company" layoutX="168.0" layoutY="381.0" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: fff; -fx-border-style: solid; -fx-border-width: 0 0 2 0; -fx-border-color: a7e4bb;" />
+        <Label layoutX="267.0" layoutY="331.0" text="Min">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="43.0" layoutY="131.0" text="ID">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="43.0" layoutY="181.0" text="Name">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="43.0" layoutY="231.0" text="Inv">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="43.0" layoutY="281.0" text="Price">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label layoutX="43.0" layoutY="331.0" text="Max">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Label fx:id="companyLabel" layoutX="43.0" layoutY="381.0" text="Company Name">
+            <font>
+                <Font size="15.0" />
+            </font>
+        </Label>
+        <Button fx:id="cancelAddPartButton" layoutX="313.0" layoutY="443.0" mnemonicParsing="false" onMouseClicked="#cancelAddPart" prefHeight="30.0" prefWidth="75.0" style="-fx-background-color: a7e4bb;" text="Cancel">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+        <Button fx:id="saveButton" layoutX="226.0" layoutY="443.0" mnemonicParsing="false" onMouseClicked="#saveAddPart" prefHeight="20.0" prefWidth="75.0" style="-fx-background-color: a7e4bb;" text="Save">
+         <font>
+            <Font size="14.0" />
+         </font>
+        </Button>
+    </children>
+</AnchorPane>

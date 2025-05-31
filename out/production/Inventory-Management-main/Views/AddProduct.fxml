@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="949.0" style="-fx-background-color: fff;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <AnchorPane layoutX="13.0" layoutY="13.0" prefHeight="455.0" prefWidth="923.0" style="-fx-border-color: fff; -fx-border-radius: 10;">
+            <children>
+                <Label layoutX="14.0" layoutY="14.0" text="Add Product">
+                    <font>
+                        <Font name="System Bold Italic" size="28.0" />
+                    </font>
+                </Label>
+                <Label layoutX="115.0" layoutY="131.0" text="ID">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Label>
+                <Label layoutX="115.0" layoutY="181.0" text="Name">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Label>
+                <Label layoutX="115.0" layoutY="231.0" text="Inv">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Label>
+                <Label layoutX="115.0" layoutY="281.0" text="Price">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Label>
+                <Label layoutX="115.0" layoutY="331.0" text="Max">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Label>
+                <Label layoutX="284.0" layoutY="331.0" text="Min">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="productID" editable="false" layoutX="177.0" layoutY="129.0" prefHeight="21.0" prefWidth="150.0" style="-fx-background-color: fff; -fx-border-style: solid; -fx-border-width: 0 0 2 0; -fx-border-color: a7e4bb;" />
+                <TextField fx:id="name" layoutX="177.0" layoutY="179.0" prefHeight="25.0" prefWidth="150.0" promptText="Product Name" style="-fx-background-color: fff; -fx-border-style: solid; -fx-border-width: 0 0 2 0; -fx-border-color: a7e4bb;" />
+                <TextField fx:id="count" layoutX="177.0" layoutY="229.0" prefHeight="25.0" prefWidth="150.0" promptText="Inventory Count" style="-fx-background-color: fff; -fx-border-style: solid; -fx-border-width: 0 0 2 0; -fx-border-color: a7e4bb;" />
+                <TextField fx:id="price" layoutX="177.0" layoutY="279.0" prefHeight="25.0" prefWidth="150.0" promptText="Product Price" style="-fx-background-color: fff; -fx-border-style: solid; -fx-border-width: 0 0 2 0; -fx-border-color: a7e4bb;" />
+                <TextField fx:id="max" layoutX="177.0" layoutY="329.0" prefHeight="21.0" prefWidth="75.0" promptText="Max" style="-fx-background-color: fff; -fx-border-style: solid; -fx-border-width: 0 0 2 0; -fx-border-color: a7e4bb;" />
+                <TextField fx:id="min" layoutX="327.0" layoutY="329.0" prefHeight="25.0" prefWidth="75.0" promptText="Min" style="-fx-background-color: fff; -fx-border-style: solid; -fx-border-width: 0 0 2 0; -fx-border-color: a7e4bb;" />
+                <Button fx:id="addProductSearchButton" layoutX="652.0" layoutY="19.0" mnemonicParsing="false" onMouseClicked="#searchForPart" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: a7e4bb;" text="Search">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+                <TextField fx:id="search" layoutX="755.0" layoutY="22.0" promptText="Search Part" style="-fx-background-color: fff; -fx-border-style: solid; -fx-border-width: 0 0 2 0; -fx-border-color: a7e4bb;" />
+                <TableView fx:id="partSearchTable" layoutX="480.0" layoutY="66.0" prefHeight="150.0" prefWidth="430.0">
+                    <columns>
+                        <TableColumn fx:id="partIDColumn" minWidth="-Infinity" prefWidth="90.0" text="Part ID">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="Id" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="partNameColumn" prefWidth="115.0" text="Part Name">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="Name" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="partCountColumn" prefWidth="115.0" text="Inventory Count">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="Stock" />
+                            </cellValueFactory>
+                        </TableColumn>
+                    </columns>
+                </TableView>
+                <Button fx:id="addProductAddButton" layoutX="834.0" layoutY="222.0" mnemonicParsing="false" onMouseClicked="#addPart" prefHeight="30.0" prefWidth="65.0" style="-fx-background-color: a7e4bb;" text="Add">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+                <Button fx:id="addProductDeleteButton" layoutX="834.0" layoutY="415.0" mnemonicParsing="false" onMouseClicked="#deletePart" prefHeight="30.0" prefWidth="65.0" style="-fx-background-color: a7e4bb;" text="Delete">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+                <Button fx:id="addProductCancelButton" layoutX="14.0" layoutY="411.0" mnemonicParsing="false" onMouseClicked="#cancelAddProduct" prefHeight="35.0" prefWidth="80.0" style="-fx-background-color: a7e4bb;" text="Cancel" />
+                <TableView fx:id="assocPartsTable" layoutX="480.0" layoutY="256.0" prefHeight="150.0" prefWidth="430.0">
+                    <columns>
+                        <TableColumn fx:id="assocPartIDColumn" minWidth="-Infinity" prefWidth="90.0" text="Part ID">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="Id" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="assocPartNameColumn" prefWidth="115.0" text="Part Name">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="Name" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="assocPartCountColumn" prefWidth="115.0" text="Inventory Count">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="Stock" />
+                            </cellValueFactory>
+                        </TableColumn>
+                    </columns>
+                </TableView>
+                <Button fx:id="addProductSaveButton" layoutX="746.0" layoutY="415.0" mnemonicParsing="false" onMouseClicked="#saveAddProduct" prefHeight="30.0" prefWidth="65.0" style="-fx-background-color: a7e4bb;" text="Save">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

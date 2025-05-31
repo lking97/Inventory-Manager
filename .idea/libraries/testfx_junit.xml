@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="testfx.junit" type="repository">
+    <properties maven-id="org.testfx:testfx-junit:4.0.18" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/testfx/testfx-junit/4.0.18/testfx-junit-4.0.18.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/testfx/testfx-core/4.0.18/testfx-core-4.0.18.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/hamcrest/hamcrest/2.1/hamcrest-2.1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/osgi/org.osgi.core/6.0.0/org.osgi.core-6.0.0.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/junit/junit/4.13-beta-3/junit-4.13-beta-3.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/hamcrest/hamcrest-core/2.1/hamcrest-core-2.1.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/assertj/assertj-core/3.13.2/assertj-core-3.13.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
